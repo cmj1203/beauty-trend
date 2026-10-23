@@ -1,0 +1,53 @@
+{
+ "generated_at": "2026-10-23T15:31:14+09:00",
+ "latest": {
+  "naver": "2026-10-22",
+  "ably": "2026-10-23",
+  "oliveyoung": "2026-10-23",
+  "youtube": "2026-10-23"
+ },
+ "brand_count": 1344,
+ "method": {
+  "scored": 803,
+  "signals": {
+   "search": 801,
+   "shopping": 178,
+   "rank": 0,
+   "purchase": 0
+  },
+  "steps": {
+   "search": 0.1206,
+   "shopping": 0.4934
+  },
+  "event_floor": 280,
+  "forecast": {
+   "days": 14,
+   "origin": "2026-10-22",
+   "brands": 786,
+   "calendar": {
+    "올영세일": {
+     "in": 1.086,
+     "out": 0.949
+    },
+    "명절 연휴": {
+     "in": 0.777,
+     "out": 1.122
+    }
+   },
+   "upcoming": [
+    {
+     "name": "올영세일",
+     "start": "2026-11-30",
+     "end": "2026-12-06",
+     "expected": true
+    },
+    {
+     "name": "명절 연휴",
+     "start": "2027-02-06",
+     "end": "2027-02-09",
+     "expected": false
+    }
+   ]
+  }
+ }
+}

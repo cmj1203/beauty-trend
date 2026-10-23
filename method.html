@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>점수 근거 — 뷰티 트렌드</title>
+  <meta name="description" content="뷰티 트렌드 점수를 어떻게 계산하는지, 단계마다 어떤 근거를 썼는지 적었어요.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23e4573d'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script type="module" crossorigin src="./assets/method-BH_5X47k.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/shared-DKmpcz72.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-DvCxP5Is.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top__in">
+      <a class="logo" href="./">뷰티<i>.</i>트렌드</a>
+      <nav class="tabs top__tabs" aria-label="화면">
+        <a class="tab" href="./">브랜드</a>
+        <a class="tab" href="./method.html" aria-current="page">점수 근거</a>
+      </nav>
+      <span class="top__meta" id="meta"></span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="doc doc--wide">
+      <h1 class="doc__title">점수 근거</h1>
+      <p class="doc__lead">점수를 어떻게 계산하는지, 단계마다 무엇을 근거로 삼았는지 적었어요.</p>
+
+      <h2>점수가 뜻하는 것</h2>
+      <ul>
+        <li>점수 100은 그 브랜드의 평소예요. 200이면 최근 일주일의 관심이 평소의 두 배쯤이라는 뜻이에요.</li>
+        <li>다른 브랜드와 견준 값이 아니라 그 브랜드 자신의 평소와 견준 값이에요. 점수가 높다고 더 많이 팔리는 브랜드라는 뜻은 아니에요.</li>
+        <li>판매량이 아니라 검색과 클릭 같은 관심 신호예요.</li>
+      </ul>
+
+      <h2>계산 순서</h2>
+      <ol class="steps">
+        <li>
+          <h3>최근 7일 평균을 내요</h3>
+          <p>검색량은 요일마다 달라요. 하루 값으로 재면 토요일 점수가 화요일보다 10%쯤 낮게 나왔어요. 일주일을 묶으면 요일이 한 번씩 들어가서 이 차이가 사라져요.</p>
+          <p class="doc__src">근거: 요일 차이는 감시 통계에서도 따로 다루는 문제예요(<a href="https://wwwnc.cdc.gov/eid/article/15/4/08-0616_article" target="_blank" rel="noopener">Tokars 외 2009</a>). 이 사이트 자료로 확인했을 때 요일별 점수가 90~100에서 모두 96으로 같아졌어요.</p>
+        </li>
+        <li>
+          <h3>평소 값은 그 앞 8주의 한가운데 값이에요</h3>
+          <p>8주치 값을 크기순으로 세웠을 때 가운데에 오는 값을 평소로 봐요. 한가운데 값은 며칠 반짝 오른 값에 끌려가지 않아요. 8주가 안 되면 4주치 이상 있을 때만 계산해요.</p>
+          <p class="doc__src">근거: 검색량으로 관심을 재는 연구가 "직전 8주의 한가운데 값"을 평소로 썼고, 4주나 10주로 바꿔도 결과가 같았다고 밝혔어요(<a href="https://www3.nd.edu/~zda/Google.pdf" target="_blank" rel="noopener">Da, Engelberg, Gao 2011</a>).</p>
+        </li>
+        <li>
+          <h3>열기는 최근 7일 평균을 평소 값으로 나눈 값이에요</h3>
+          <p>평소와 같으면 1, 두 배면 2예요. 다만 평소 값이 너무 작은 신호는 쓰지 않아요. 값이 작으면 검색 몇 번만 늘어도 몇 배로 뛰어 보이기 때문이에요. 기준은 "평소 값이 측정 눈금 10칸 이상"이에요. 눈금은 네이버 값이 움직이는 가장 작은 단위로, 지금 검색은 <span data-fill="step-search">–</span>, 쇼핑은 <span data-fill="step-shopping">–</span>이에요.</p>
+          <p class="doc__src">근거: 작은 수에서 비율이 불안정하다는 것은 통계에서 잘 알려진 문제예요(<a href="https://doi.org/10.1186/s13059-014-0550-8" target="_blank" rel="noopener">Love 외 2014</a>). 10칸이라는 숫자는 문헌에서 가져온 값이 아니에요. 한 칸이 움직여도 값이 10% 넘게 흔들리지 않게 하려고 직접 정했어요.</p>
+        </li>
+        <li>
+          <h3>점수는 쓸 수 있는 신호의 열기를 같은 비중으로 합친 값이에요</h3>
+          <p>열기들을 곱해서 평균을 낸 뒤(기하평균) 100을 곱해요. 신호가 하나뿐이면 그 열기에 100을 곱한 값이에요.</p>
+          <p class="doc__src">근거: 비율을 합칠 때 기하평균을 쓰는 것은 <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2008/08/handbook-on-constructing-composite-indicators-methodology-and-user-guide_g1gh9301/9789264043466-en.pdf" target="_blank" rel="noopener">OECD 합성지표 지침</a>과 <a href="https://hdr.undp.org/system/files/documents/hdrp201042.pdf" target="_blank" rel="noopener">인간개발지수</a>의 방식이에요. 비중을 똑같이 둔 것은 어느 신호가 더 중요한지 재 본 자료가 아직 없어서예요. 같은 지침은 비중을 "가치 판단"이라고 불러요.</p>
+        </li>
+      </ol>
+
+      <h2>지금 점수에 쓰는 신호</h2>
+      <table>
+        <thead><tr><th>신호</th><th>무엇</th><th>쓰는 브랜드</th></tr></thead>
+        <tbody>
+          <tr><td><b>검색량</b></td><td>네이버에서 브랜드 이름을 검색한 정도</td><td data-signal="search">–</td></tr>
+          <tr><td><b>쇼핑 클릭</b></td><td>네이버 쇼핑에서 그 브랜드의 화장품을 누른 정도</td><td data-signal="shopping">–</td></tr>
+          <tr><td><b>순위</b></td><td>올리브영과 에이블리의 판매 순위</td><td data-signal="rank">–</td></tr>
+          <tr><td><b>구매 반응</b></td><td>에이블리 판매 수와 올리브영 리뷰 수가 하루에 늘어난 정도</td><td data-signal="purchase">–</td></tr>
+        </tbody>
+      </table>
+      <p>전체 <span data-fill="brands">–</span>곳 가운데 점수가 나오는 곳은 <span data-fill="scored">–</span>곳이에요. 나머지는 모든 신호의 평소 값이 너무 작아서 점수를 내지 않아요.</p>
+      <p>순위와 구매 반응은 2026년 10월 8일부터 모으고 있어요. 평소 값을 내려면 6주쯤 쌓여야 해서, 그 전까지는 점수에 들어가지 않아요. 브랜드마다 쓰는 신호가 다르니 상세 화면에서 어떤 신호가 들어갔는지 함께 보여 줘요.</p>
+      <p class="doc__src">네이버가 주는 값은 실제 횟수가 아니라 상대값이에요(<a href="https://developers.naver.com/products/service-api/datalab/datalab.md" target="_blank" rel="noopener">네이버 데이터랩 설명</a>). 그래서 요청마다 기준이 되는 낱말을 함께 넣어 값을 맞춰요.</p>
+
+      <h2>급상승한 날</h2>
+      <p>아래 두 가지를 모두 만족한 날이에요.</p>
+      <ul>
+        <li>점수가 지난 1년 동안 모든 브랜드가 받은 점수의 상위 1% 안에 들어요. 지금은 <span data-fill="floor">–</span>점 이상이에요.</li>
+        <li>그 브랜드의 지난 28일 점수가 흔들리던 폭의 3.5배보다 더 올랐어요.</li>
+      </ul>
+      <p>급상승한 날 옆에는 그날 어떤 신호가 평소의 몇 배였는지를 그대로 적어요.</p>
+      <p class="doc__src">근거: 3.5배는 <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm" target="_blank" rel="noopener">미국 표준기술연구소 통계 안내서</a>가 소개하는 기준이에요. 한가운데 값과 흔들린 폭으로 유난히 큰 값을 찾는 방법은 <a href="https://doi.org/10.1016/j.jesp.2013.03.013" target="_blank" rel="noopener">Leys 외 2013</a>을 따랐어요. 28일은 <a href="https://cdcgov.github.io/Rnssp/reference/alert_ewma.html" target="_blank" rel="noopener">미국 질병 감시 시스템의 기본값</a>과 같은데, 다른 분야의 값이라 이 사이트에서 따로 검증한 것은 아니에요. 상위 1%는 직접 정했어요.</p>
+
+      <h2 id="forecast">앞으로 2주 예측</h2>
+      <p>상세 화면 그래프 오른쪽의 점선은 앞으로 14일 동안의 예상 점수예요. 회색 띠는 범위예요. 지난 날짜로 돌아가 예측해 보니 실제 점수가 열 번 중 여덟 번은 이 안에 들었어요.</p>
+      <ol class="steps">
+        <li>
+          <h3>지금 관심이 그대로 이어진다고 놓아요</h3>
+          <p>검색량과 쇼핑 클릭이 최근 7일 평균 그대로 이어진다고 보고, 위의 점수 계산을 그대로 적용해요.</p>
+        </li>
+        <li>
+          <h3>평소 쪽으로 당겨요</h3>
+          <p>평소보다 높던 점수는 시간이 지나면 평소로 돌아오는 일이 많아요. 지난 자료에서 며칠 뒤에 얼마나 돌아왔는지를 재서 그만큼 당겨요. 하루 뒤는 거의 그대로 두고, 2주 뒤는 절반 넘게 당겨요.</p>
+          <p class="doc__src">근거: 높게 잰 값이 다음에는 평균 쪽으로 돌아오는 현상이에요(<a href="https://doi.org/10.1093/ije/dyh299" target="_blank" rel="noopener">Barnett 외 2005</a>).</p>
+        </li>
+        <li>
+          <h3>날짜가 정해진 행사를 넣어요</h3>
+          <p>올리브영 올영세일(1년 4번, 7일씩)과 설·추석 연휴를 넣어요. 지금 계수로는 점수를 내는 일주일이 모두 행사 기간일 때 올영세일은 <span data-fill="sale-in">–</span>배, 명절 연휴는 <span data-fill="holiday-in">–</span>배가 되고, 명절이 끝나면 <span data-fill="holiday-out">–</span>배로 다시 올라와요. 지난 세일 때 많이 오른 브랜드는 더 많이 올려요. 계수는 지난 행사 때 실제로 움직인 만큼으로 매일 다시 정해요.</p>
+          <p>올영세일은 기사로 확인한 날짜를 써요. 아직 발표되지 않은 회차는 지난해와 같은 날짜로 넣고, 매일 뉴스에서 공지를 찾아 기사 두 곳 이상이 같은 날짜를 말하면 고쳐요. 발표는 보통 시작 1~2일 전에 나와요. 다음에 넣을 행사: <span data-fill="upcoming">–</span></p>
+          <p class="doc__src">근거: 공휴일처럼 날짜가 정해진 날을 따로 표시해 예측에 넣는 방법은 예측 교재에 나와요(<a href="https://otexts.com/fpp3/useful-predictors.html" target="_blank" rel="noopener">Hyndman, Athanasopoulos</a>).</p>
+        </li>
+        <li>
+          <h3>범위는 지난 예측이 벗어난 정도로 잡아요</h3>
+          <p>지난 날짜마다 예측을 해 보고 실제와 얼마나 달랐는지 모아서 가운데 80%를 범위로 써요. 점수 수준과 행사가 걸쳤는지에 따라 따로 재요.</p>
+          <p class="doc__src">근거: 지난 예측 오차로 범위를 잡는 방법(<a href="https://otexts.com/fpp3/prediction-intervals.html" target="_blank" rel="noopener">예측 범위</a>)과, 지난 날짜에서 한 칸씩 옮겨 가며 평가하는 방법(<a href="https://otexts.com/fpp3/tscv.html" target="_blank" rel="noopener">시간 순서대로 평가하기</a>)이에요.</p>
+        </li>
+      </ol>
+      <p>2026년 4월 이전 자료로 방법을 정하고 그 뒤 6개월로 시험했어요(2026년 10월 12일).</p>
+      <ul>
+        <li>"점수가 지금 그대로"라고 했을 때와 견주면 하루 뒤 25%, 일주일 뒤 14%, 2주 뒤 21% 덜 틀렸어요.</li>
+        <li>실제 점수가 범위 안에 든 비율은 80~82%였어요.</li>
+        <li>명절 연휴로 들어가는 예측은 행사를 넣으니 20% 덜 틀렸어요(2026년 설·추석).</li>
+        <li>올영세일로 들어가는 예측은 4.5% 덜 틀렸어요. 지난 세일에 많이 오른 브랜드는 5번 가운데 4번이 13~18%, 2026년 3월은 6% 덜 틀렸어요.</li>
+      </ul>
+      <p>예측은 2주까지만 보여 줘요. 4주 뒤 예측은 "평소 100"이라고 하는 것과 정확도 차이가 없었어요.</p>
+      <p>브랜드가 따로 하는 행사(모델 발탁, 팬사인회, 팝업, 유튜브 할인 방송 등)는 넣지 않았어요. 대부분 시작 0~3일 전에야 공개되고, 뉴스·블로그·검색량으로 시험했을 때 미리 맞히지 못했어요. 그래서 갑자기 뜨는 일은 맞히지 못해요. 이 예측은 지금 관심이 어떻게 가라앉거나 이어질지를 보여 줘요.</p>
+
+      <h2 id="news">브랜드 소식</h2>
+      <p>상세 화면 그래프 아래쪽 번호와 "브랜드 소식" 목록은 브랜드가 따로 하는 행사를 기사로 확인해 보여 주는 거예요. 모델·앰배서더 발탁, 팬사인회, 팝업, 콜라보·한정판, 출시, 할인 방송 소식이에요.</p>
+      <ul>
+        <li>매일 네이버 뉴스에서 브랜드마다 최근 기사를 찾아, 제목에 브랜드 이름과 행사 낱말이 함께 있는 기사만 모아요.</li>
+        <li>이름이 다른 뜻으로도 쓰이는 브랜드가 있어서, 브랜드 이름이 따로 떨어진 낱말로 나오고 화장품 관련 낱말이 함께 있을 때만 잡아요. 한 글자 이름과 소매점 이름(올리브영)인 브랜드는 빼요.</li>
+        <li>기사에 날짜("12일 선론칭", "6일까지")가 있으면 그 날짜에 표시하고, 없으면 기사가 나온 날에 표시해요. 같은 종류의 소식이 사흘 안에 여러 번 나오면 하나로 묶어요.</li>
+      </ul>
+      <p>기사로 확인한 소식일 뿐이라 예측 숫자에는 넣지 않았어요. 지금 자료로 시험했을 때 행사 기사가 있던 브랜드의 점수 움직임이 브랜드마다 너무 달라서, 숫자에 넣으면 오히려 더 틀렸어요. 기사를 석 달쯤 모은 뒤(2027년 1월쯤) 행사 종류별로 다시 시험해서, 근거가 생기면 예측에 넣을 거예요.</p>
+
+      <h2>근거 없이 직접 정한 것</h2>
+      <ul>
+        <li>평소 값이 눈금 10칸 이상이어야 쓴다는 기준.</li>
+        <li>급상승한 날의 상위 1% 기준.</li>
+        <li>급상승한 날이 사흘 안에 이어지면 하나로 묶는 것.</li>
+        <li>일주일 가운데 나흘 이상 자료가 있어야 평균을 내는 것.</li>
+        <li>화장품과 상관없어 보이는 검색을 빼는 규칙. 최근 1년 동안 화장품 쇼핑 클릭은 거의 없는데 검색만 많은 브랜드와, 이름이 다른 뜻으로 쓰이는 브랜드 4곳의 검색량은 쓰지 않아요.</li>
+        <li>신호의 비중을 같게 둔 것. 순위와 구매 자료가 쌓이면 다시 살펴볼 거예요.</li>
+        <li>예측에서 세일 오름폭을 재는 날(세일 시작 8일 전과 마지막 날)과, 공지 기사가 예상 날짜에서 14일 안이어야 같은 세일로 보는 기준.</li>
+        <li>브랜드 소식을 고르는 행사 낱말 목록, 화장품 관련 낱말 목록, 사흘 안의 같은 소식을 묶는 기준.</li>
+      </ul>
+
+      <h2>아직 확인하지 못한 것</h2>
+      <ul>
+        <li>점수가 오른 것이 실제 판매 증가로 이어지는지는 몰라요. 검색은 관심의 신호이고 판매와 똑같이 움직이지 않아요. 한 연구에서는 검색이 1% 많을 때 판매가 0.5%쯤 많았어요(<a href="https://static.googleusercontent.com/media/www.google.com/en//googleblogs/pdfs/google_predicting_the_present.pdf" target="_blank" rel="noopener">Choi, Varian 2009</a>, 자동차 브랜드 한 곳).</li>
+        <li>급상승한 날이 실제 행사와 맞는지는 3건만 맞춰 봤어요. 3건 모두 잡혔지만 하루 이틀 늦게 잡혔어요.</li>
+        <li>검색은 보상형 퀴즈처럼 구매와 상관없는 이유로도 늘 수 있어요. 지금 값에 얼마나 섞이는지는 재지 못했어요.</li>
+        <li>올리브영과 에이블리가 순위를 며칠치 판매로 매기는지는 공개돼 있지 않아요.</li>
+        <li>일주일을 묶어 재기 때문에 하루 이틀 늦게 반응해요.</li>
+      </ul>
+
+      <h2>참고한 자료</h2>
+      <ul>
+        <li><a href="https://www3.nd.edu/~zda/Google.pdf" target="_blank" rel="noopener">Da, Engelberg, Gao (2011). In Search of Attention.</a> 평소 값을 직전 8주의 한가운데 값으로 잡는 방식.</li>
+        <li><a href="https://wwwnc.cdc.gov/eid/article/15/4/08-0616_article" target="_blank" rel="noopener">Tokars 외 (2009). Enhancing Time-Series Detection Algorithms for Automated Biosurveillance.</a> 요일 차이와 기준 기간.</li>
+        <li><a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2008/08/handbook-on-constructing-composite-indicators-methodology-and-user-guide_g1gh9301/9789264043466-en.pdf" target="_blank" rel="noopener">OECD, JRC (2008). Handbook on Constructing Composite Indicators.</a> 여러 신호를 합치는 방식과 비중.</li>
+        <li><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm" target="_blank" rel="noopener">NIST/SEMATECH e-Handbook of Statistical Methods. Detection of Outliers.</a> 유난히 큰 값의 기준 3.5.</li>
+        <li><a href="https://doi.org/10.1016/j.jesp.2013.03.013" target="_blank" rel="noopener">Leys 외 (2013). Detecting outliers.</a> 한가운데 값과 흔들린 폭으로 유난히 큰 값 찾기.</li>
+        <li><a href="https://developers.naver.com/docs/serviceapi/datalab/search/search.md" target="_blank" rel="noopener">네이버 데이터랩 검색어 트렌드 문서</a>와 <a href="https://developers.naver.com/docs/serviceapi/datalab/shopping/shopping.md" target="_blank" rel="noopener">쇼핑인사이트 문서.</a> 값의 뜻.</li>
+        <li><a href="https://static.googleusercontent.com/media/www.google.com/en//googleblogs/pdfs/google_predicting_the_present.pdf" target="_blank" rel="noopener">Choi, Varian (2009). Predicting the Present with Google Trends.</a> 검색과 판매의 관계.</li>
+        <li><a href="https://otexts.com/fpp3/" target="_blank" rel="noopener">Hyndman, Athanasopoulos. Forecasting: Principles and Practice (3판).</a> 예측 범위, 날짜가 정해진 행사 넣기, 시간 순서대로 평가하기.</li>
+        <li><a href="https://doi.org/10.1093/ije/dyh299" target="_blank" rel="noopener">Barnett 외 (2005). Regression to the mean.</a> 높던 값이 평소 쪽으로 돌아오는 현상.</li>
+      </ul>
+
+      <h2>고친 기록</h2>
+      <ul>
+        <li>2026년 10월 12일. 기사로 확인한 브랜드 소식을 상세 화면에 보여 주기 시작했어요.</li>
+        <li>2026년 10월 12일. 앞으로 2주 예측을 넣었어요.</li>
+        <li>2026년 10월 12일. 계산을 바꿨어요. 전에는 하루 값을 지난 90일의 한가운데 값과 견주고, 모든 값에 5를 더하고, 검색에 더 큰 비중을 줬어요. 이 숫자들에 근거가 없어서 위 방식으로 바꿨어요.</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__in" id="foot"></div>
+    <div class="foot__in foot__links"><a href="./">처음으로</a><a href="./about.html">안내·개인정보처리방침</a></div>
+  </footer>
+
+</body>
+</html>
