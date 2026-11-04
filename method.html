@@ -8,9 +8,9 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23e4573d'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <script type="module" crossorigin src="./assets/method-BH_5X47k.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/shared-DKmpcz72.js">
-  <link rel="stylesheet" crossorigin href="./assets/style-DvCxP5Is.css">
+  <script type="module" crossorigin src="./assets/method-4natrKBT.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/shared-C67rVuy2.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-D73kj8Va.css">
 </head>
 <body>
   <header class="top">
@@ -29,14 +29,16 @@
       <h1 class="doc__title">점수 근거</h1>
       <p class="doc__lead">점수를 어떻게 계산하는지, 단계마다 무엇을 근거로 삼았는지 적었어요.</p>
 
-      <h2>점수가 뜻하는 것</h2>
+      <nav class="toc" id="toc" aria-label="목차"></nav>
+
+      <h2 id="meaning">점수가 뜻하는 것</h2>
       <ul>
         <li>점수 100은 그 브랜드의 평소예요. 200이면 최근 일주일의 관심이 평소의 두 배쯤이라는 뜻이에요.</li>
         <li>다른 브랜드와 견준 값이 아니라 그 브랜드 자신의 평소와 견준 값이에요. 점수가 높다고 더 많이 팔리는 브랜드라는 뜻은 아니에요.</li>
         <li>판매량이 아니라 검색과 클릭 같은 관심 신호예요.</li>
       </ul>
 
-      <h2>계산 순서</h2>
+      <h2 id="steps">계산 순서</h2>
       <ol class="steps">
         <li>
           <h3>최근 7일 평균을 내요</h3>
@@ -60,7 +62,7 @@
         </li>
       </ol>
 
-      <h2>지금 점수에 쓰는 신호</h2>
+      <h2 id="signals">지금 점수에 쓰는 신호</h2>
       <table>
         <thead><tr><th>신호</th><th>무엇</th><th>쓰는 브랜드</th></tr></thead>
         <tbody>
@@ -74,7 +76,7 @@
       <p>순위와 구매 반응은 2026년 10월 8일부터 모으고 있어요. 평소 값을 내려면 6주쯤 쌓여야 해서, 그 전까지는 점수에 들어가지 않아요. 브랜드마다 쓰는 신호가 다르니 상세 화면에서 어떤 신호가 들어갔는지 함께 보여 줘요.</p>
       <p class="doc__src">네이버가 주는 값은 실제 횟수가 아니라 상대값이에요(<a href="https://developers.naver.com/products/service-api/datalab/datalab.md" target="_blank" rel="noopener">네이버 데이터랩 설명</a>). 그래서 요청마다 기준이 되는 낱말을 함께 넣어 값을 맞춰요.</p>
 
-      <h2>급상승한 날</h2>
+      <h2 id="spikes">급상승한 날</h2>
       <p>아래 두 가지를 모두 만족한 날이에요.</p>
       <ul>
         <li>점수가 지난 1년 동안 모든 브랜드가 받은 점수의 상위 1% 안에 들어요. 지금은 <span data-fill="floor">–</span>점 이상이에요.</li>
@@ -126,7 +128,7 @@
       </ul>
       <p>기사로 확인한 소식일 뿐이라 예측 숫자에는 넣지 않았어요. 지금 자료로 시험했을 때 행사 기사가 있던 브랜드의 점수 움직임이 브랜드마다 너무 달라서, 숫자에 넣으면 오히려 더 틀렸어요. 기사를 석 달쯤 모은 뒤(2027년 1월쯤) 행사 종류별로 다시 시험해서, 근거가 생기면 예측에 넣을 거예요.</p>
 
-      <h2>근거 없이 직접 정한 것</h2>
+      <h2 id="choices">근거 없이 직접 정한 것</h2>
       <ul>
         <li>평소 값이 눈금 10칸 이상이어야 쓴다는 기준.</li>
         <li>급상승한 날의 상위 1% 기준.</li>
@@ -138,7 +140,7 @@
         <li>브랜드 소식을 고르는 행사 낱말 목록, 화장품 관련 낱말 목록, 사흘 안의 같은 소식을 묶는 기준.</li>
       </ul>
 
-      <h2>아직 확인하지 못한 것</h2>
+      <h2 id="unknown">아직 확인하지 못한 것</h2>
       <ul>
         <li>점수가 오른 것이 실제 판매 증가로 이어지는지는 몰라요. 검색은 관심의 신호이고 판매와 똑같이 움직이지 않아요. 한 연구에서는 검색이 1% 많을 때 판매가 0.5%쯤 많았어요(<a href="https://static.googleusercontent.com/media/www.google.com/en//googleblogs/pdfs/google_predicting_the_present.pdf" target="_blank" rel="noopener">Choi, Varian 2009</a>, 자동차 브랜드 한 곳).</li>
         <li>급상승한 날이 실제 행사와 맞는지는 3건만 맞춰 봤어요. 3건 모두 잡혔지만 하루 이틀 늦게 잡혔어요.</li>
@@ -147,7 +149,7 @@
         <li>일주일을 묶어 재기 때문에 하루 이틀 늦게 반응해요.</li>
       </ul>
 
-      <h2>참고한 자료</h2>
+      <h2 id="sources">참고한 자료</h2>
       <ul>
         <li><a href="https://www3.nd.edu/~zda/Google.pdf" target="_blank" rel="noopener">Da, Engelberg, Gao (2011). In Search of Attention.</a> 평소 값을 직전 8주의 한가운데 값으로 잡는 방식.</li>
         <li><a href="https://wwwnc.cdc.gov/eid/article/15/4/08-0616_article" target="_blank" rel="noopener">Tokars 외 (2009). Enhancing Time-Series Detection Algorithms for Automated Biosurveillance.</a> 요일 차이와 기준 기간.</li>
@@ -160,7 +162,7 @@
         <li><a href="https://doi.org/10.1093/ije/dyh299" target="_blank" rel="noopener">Barnett 외 (2005). Regression to the mean.</a> 높던 값이 평소 쪽으로 돌아오는 현상.</li>
       </ul>
 
-      <h2>고친 기록</h2>
+      <h2 id="changes">고친 기록</h2>
       <ul>
         <li>2026년 10월 12일. 기사로 확인한 브랜드 소식을 상세 화면에 보여 주기 시작했어요.</li>
         <li>2026년 10월 12일. 앞으로 2주 예측을 넣었어요.</li>
