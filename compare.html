@@ -8,9 +8,9 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23e4573d'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <script type="module" crossorigin src="./assets/compare-CBdzBhvQ.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/shared-C67rVuy2.js">
-  <link rel="stylesheet" crossorigin href="./assets/style-D73kj8Va.css">
+  <script type="module" crossorigin src="./assets/compare-DE-ar93k.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/shared-bORFyOnJ.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-BW6qwyC5.css">
 </head>
 <body>
   <header class="top">
@@ -34,7 +34,7 @@
     <section class="section">
       <form class="search search--small compare__search" id="search">
         <div class="search__row">
-          <input class="search__input" type="search" name="q" placeholder="브랜드 더하기 (최대 5개)" autocomplete="off" aria-label="비교할 브랜드 검색" aria-autocomplete="list" aria-controls="suggest">
+          <input class="search__input" type="search" name="q" placeholder="브랜드 더하기 (최대 5개)" autocomplete="off" aria-label="비교할 브랜드 검색" role="combobox" aria-autocomplete="list" aria-controls="suggest" aria-expanded="false">
         </div>
         <div class="suggest" id="suggest" role="listbox" aria-label="브랜드 추천" hidden></div>
       </form>
@@ -44,7 +44,7 @@
     <section class="section">
       <div class="section__head">
         <h2 class="section__title">트렌드 점수</h2>
-        <div class="seg" id="range">
+        <div class="seg" id="range" role="group" aria-label="기간">
           <button class="seg__btn" type="button" data-days="30" aria-pressed="false">1개월</button>
           <button class="seg__btn" type="button" data-days="90" aria-pressed="true">3개월</button>
           <button class="seg__btn" type="button" data-days="365" aria-pressed="false">1년</button>
