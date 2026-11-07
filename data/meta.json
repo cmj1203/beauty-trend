@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-11-06T17:41:30+09:00",
+ "generated_at": "2026-11-07T17:06:53+09:00",
  "latest": {
-  "naver": "2026-11-05",
-  "ably": "2026-11-06",
-  "oliveyoung": "2026-11-06",
-  "youtube": "2026-11-06"
+  "naver": "2026-11-06",
+  "ably": "2026-11-07",
+  "oliveyoung": "2026-11-07",
+  "youtube": "2026-11-07"
  },
  "brand_count": 1344,
  "method": {
-  "scored": 785,
+  "scored": 784,
   "signals": {
-   "search": 783,
+   "search": 782,
    "shopping": 174,
    "rank": 0,
    "purchase": 0
@@ -19,19 +19,19 @@
    "search": 0.1206,
    "shopping": 0.4934
   },
-  "event_floor": 280,
+  "event_floor": 282,
   "forecast": {
    "days": 14,
-   "origin": "2026-11-05",
-   "brands": 779,
+   "origin": "2026-11-06",
+   "brands": 778,
    "calendar": {
     "올영세일": {
      "in": 1.085,
-     "out": 0.948
+     "out": 0.947
     },
     "명절 연휴": {
      "in": 0.776,
-     "out": 1.119
+     "out": 1.12
     }
    },
    "upcoming": [
