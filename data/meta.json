@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-26T11:12:40+09:00",
+ "generated_at": "2026-11-27T10:42:31+09:00",
  "latest": {
-  "naver": "2026-11-25",
-  "ably": "2026-11-26",
-  "oliveyoung": "2026-11-26",
-  "youtube": "2026-11-26"
+  "naver": "2026-11-26",
+  "ably": "2026-11-27",
+  "oliveyoung": "2026-11-27",
+  "youtube": "2026-11-27"
  },
  "brand_count": 1344,
  "method": {
@@ -22,7 +22,7 @@
   "event_floor": 278,
   "forecast": {
    "days": 14,
-   "origin": "2026-11-26",
+   "origin": "2026-11-27",
    "brands": 80,
    "calendar": {
     "올영세일": {
